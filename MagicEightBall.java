@@ -76,6 +76,16 @@ import javax.swing.JPanel;
          *    you remember the keyword to use to break out of
          *    a loop?)
          */
+        String questionText = "notempty";
+        
+        while (questionText.length() > 0)
+        {
+            System.out.print("Next question (press enter without any text to quit): ");
+            questionText = keyboard.nextLine();
+            if (questionText.length() > 0) {
+               eightBall.poseQuestion(questionText);
+            }
+        }
         
         // we're all done. It is always a good idea to close resources 
         // we are no longer using
@@ -110,6 +120,25 @@ import javax.swing.JPanel;
      * to return.
      * @return a random answer
      */
+    public static String getRandomAnswer()
+    {
+         int val = (int)(Math.random() * 5 + 1);
+         String answer;
+         
+         if (val == 1) {
+            answer = "Maybe someday...";
+         } else if (val == 2) {
+            answer = "Nah...";
+         } else if (val == 3) {
+            answer = "Ok, maybe.";
+         } else if (val == 4) {
+            answer = "Not sure.";
+         } else {
+            answer =  "Yes.";
+         }
+         
+         return answer;
+    }
     
     /*
      * The code below this point will not look familiar to you. Don't worry,

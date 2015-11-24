@@ -94,7 +94,7 @@ import javax.swing.JPanel;
      */
     public static Color getRandomColor()
     {
-        return Color.BLACK;
+        return Color.RED;
     }
 
     /**
